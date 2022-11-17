@@ -17,7 +17,7 @@ function timeConversion(s) {
     let hs = s.slice(0,2)
 
     if(s.endsWith('AM')) {
-        return (hs == 12)? M.replace(hs, hs = '00') : M
+        return (hs == 12)? M.replace(hs, '00') : M
     }
 
     if(s.endsWith('PM')) {
