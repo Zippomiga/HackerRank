@@ -23,7 +23,7 @@ function plusMinus(arr) {
         if(arr[i] === 0) obj.z++
     }
 
-    for(let x in obj) obj[x] = ((1/L * obj[x]).toPrecision(6))
+    for(let x in obj) obj[x] = (obj[x] / L).toPrecision(6)
     
     return `${obj.p}\n${obj.n}\n${obj.z}`
 }
