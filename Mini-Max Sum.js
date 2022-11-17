@@ -6,8 +6,8 @@
 // 16 24
 
 function miniMaxSum(arr) {
-    let sumMax = arr.reduce((a,b) => a+b) - Math.max(...arr)
-    let sumMin = arr.reduce((a,b) => a+b) - Math.min(...arr)
+    const min = arr.reduce((a,b) => a+b) - Math.max(...arr)
+    const max = arr.reduce((a,b) => a+b) - Math.min(...arr)
 
-    console.log(sumMax, sumMin)
+    console.log(min, max)
 }
