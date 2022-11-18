@@ -19,13 +19,7 @@ function plusMinus(arr) {
         if(arr[i] === 0) obj.z++
     }
 
-    for(let x in obj) obj[x] = (obj[x] / L).toPrecision(6)
+    for(let x in obj) obj[x] = (obj[x] / L).toFixed(6)
     
-    console.log(
-`${obj.p}
-${obj.n}
-${obj.z}`
-    )
+    console.log(`${obj.p}\n${obj.n}\n${obj.z}`)
 }
-
-plusMinus([1,1,0,-1,-1])
