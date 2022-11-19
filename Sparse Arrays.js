@@ -18,3 +18,11 @@ function matchingStrings(strings, queries) {
 
     return results
 }
+
+// <--------------- Others --------------->
+
+function matchingStrings(strings, queries) {
+    return queries.map(query => 
+            strings.filter(string => 
+                string === query).length)
+}
