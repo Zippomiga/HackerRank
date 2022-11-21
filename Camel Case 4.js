@@ -53,12 +53,12 @@ function processData(input) {
             'C;C;': R.replace(R[0], R[0].toUpperCase()),
             'C;M;': R + '()',
             'C;V;': R,
-            'S;C;': R.toLowerCase(),
+            'S;C;': R.toLowerCase().trim(),
             'S;M;': R.toLowerCase().replace('()', ''),
             'S;V;': R.toLowerCase()
         }
 
-        console.log(output[operator].trim())
+        console.log(output[operator])
     })
 } 
 
