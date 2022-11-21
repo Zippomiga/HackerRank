@@ -25,7 +25,6 @@
 
 function processData(input) {
     const sentences = input.split(/\r\n/)
-    let ans = ''
 
     sentences.forEach(sentence => {
         const exec = sentence.slice(0,1)
@@ -51,21 +50,40 @@ function processData(input) {
         const R = words.join('')
 
         const output = {
-            'C;C;': () => R.replace(R[0], R[0].toUpperCase()),
-            'C;M;': () => R + '()',
-            'C;V;': () => R,
-            'S;C;': () => R.toLowerCase(),
-            'S;M;': () => R.toLowerCase().replace('()', ''),
-            'S;V;': () => R.toLowerCase()
+            'C;C;': R.replace(R[0], R[0].toUpperCase()),
+            'C;M;': R + '()',
+            'C;V;': R,
+            'S;C;': R.toLowerCase(),
+            'S;M;': R.toLowerCase().replace('()', ''),
+            'S;V;': R.toLowerCase()
         }
 
-        ans += `${output[operator]().trim()}\n`
+        console.log(output[operator].trim())
     })
-
-    console.log(ans.trim())
-}
+} 
 
 
 // NOTE: the code passes the HackerRank's tests, but at any IDE it returns imprecise values.
 // It's not a problem of my code, many users have had and reported the same issue.
 // Removing the "\r" at the const "sentences" will return the correct output.
+
+
+// <--------------- Others --------------->
+
+function processData(input) {
+    const arr = input.split(/\r\n/)
+    const U = w => w.charAt(0).toUpperCase() + w.slice(1)
+    const L = w => w.charAt(0).toLowerCase() + w.slice(1)
+    
+    for(a of arr) {
+        const [sc, mcv, name] = a.split(';')
+        const s = sc === 'S'
+    
+        let R = name.split(s? (/(?=[A-Z])/) : ' ').map(s? L : U).join(s? ' ' : '')
+    
+        if(mcv === 'M') R = s? R.slice(0, -2) : R + '()'
+        if(mcv !== 'C') R = L(R)
+    
+        console.log(R)
+    }
+}
