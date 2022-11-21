@@ -66,6 +66,6 @@ function processData(input) {
 }
 
 
-// NOTE: the code pass the HackerRank's tests, but at any IDE it returns imprecise values.
+// NOTE: the code passes the HackerRank's tests, but at any IDE it returns imprecise values.
 // It's not a problem of my code, many users have had and reported the same issue.
-// Removing the "\r" at the const "sentences" it will return the correct output.
+// Removing the "\r" at the const "sentences" will return the correct output.
