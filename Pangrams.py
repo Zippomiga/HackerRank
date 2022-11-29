@@ -18,12 +18,9 @@
 # En el primer caso de prueba, la respuesta es un pangram porque la oración contiene todas las letras.
 
 def pangrams(s):
-    S = s.lower()
-    F = 'abcdefghijklmnopqrstuvwxyz'
+    S, F = s.lower(), 'abcdefghijklmnopqrstuvwxyz'
 
     for ch in S:
-        if ch in F:
-            F = F.replace(ch, '')
+        if ch in F: F = F.replace(ch, '')
 
-    if len(F) == 0: return 'pangram'
-    else: return 'not pangram'
+    return 'pangram' if len(F) == 0 else 'not pangram'
