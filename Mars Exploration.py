@@ -27,14 +27,11 @@
 
 
 def marsExploration(s):
-    sos = 'SOS'
-    altChtr = 0
-
+    sos, alt_Ch = 'SOS', 0
+    
     for i in range(0, len(s), 3):
-        signal = s[i:i+3]
-        if signal != sos:
-            if sos[0] != signal[0]: altChtr += 1
-            if sos[1] != signal[1]: altChtr += 1
-            if sos[2] != signal[2]: altChtr += 1
-
-    return altChtr
+        if s[i+0] != sos[0]: alt_Ch += 1
+        if s[i+1] != sos[1]: alt_Ch += 1
+        if s[i+2] != sos[2]: alt_Ch += 1
+    
+    return alt_Ch
